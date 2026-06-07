@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+    <style>
+        :root {
+            --bg-color: #4d6489;
+            --primary: #c0c6de;
+            --secondary: #e9d6e5;
+            --dark: #1c3150;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 600px; margin: 40px auto; }
+        .box {
+            background: white;
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+         .blog-card {
+            background: #ffffff;
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+        .blog-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--dark);
+        }
+        .blog-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+            margin-top: 15px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 3px solid var(--dark);
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .nav-link {
+            color: var(--dark);
+            font-weight: bold;
+            text-decoration: none;
+            background: var(--secondary);
+            padding: 5px 10px;
+            border: 2px solid var(--dark);
+        }
+        button {
+            background: var(--primary);
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px var(--dark);
+        }
+        button:hover { background: var(--secondary); }
+    </style>
+</head>
+<body>
+    <a href="about.html" class="nav-link">← Back to About Me</a>
+
+     <div class="container">
+        <article class="blog-card">
+            <h2>My Family</h2>
+            <img class="blog-img" src="images/family1.jpg" alt="Family">
+            <p>I have 5 family members that consist of a mother, two older sister, 1 older brother and me.</p>
+        </article>
+     </div>
+
+
+<!-- Copyright Footer Section -->
+<footer style="text-align: center; padding: 20px; margin-top: 50px;">
+    <p style="font-weight: bold; margin: 0; text-transform: uppercase;">
+        <i class="fa-regular fa-copyright"></i>© Nur Fiqriah 2026 | All works used belongs to the rightful owners. |
+             Made with the intention of completing IML470 assignment.<i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+    </p>
+</footer>
+
+</body>
+</html>

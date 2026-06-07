@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        :root {
+            --bg-color: #4d6489;
+            --primary: #c0c6de;
+            --secondary: #e9d6e5;
+            --dark: #1c3150;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: var(--card-bg);
+            padding: 30px;
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; }
+        nav { margin-top: 15px; }
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 5px solid transparent;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        nav a:hover {
+            background: var(--secondary);
+            border: 2px solid var(--dark);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            padding: 40px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            align-content: center;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+        .blog-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--dark);
+        }
+        .blog-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+            margin-top: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 3px solid var(--dark);
+            box-shadow: 4px 4px 0px var(--dark);
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Chaos Chronicles (ﾉ>w<)ﾉ :｡･:*:･ﾟ’★</h1>
+        <p>A fun space for wild thoughts and daily updates.</p>
+    </header>
+
+    <div class="container">
+        <div class="box">
+        <h1>Website Navigation Box</h1>
+            <nav>
+            <a href="index.html">Homepage</a> |
+            <a href="main.html" style="background: var(--secondary); border: 2px solid var(--dark);">Main Page</a> |
+            <a href="post.html">Posts</a> |
+            <a href="collage.html">Albums</a> |
+            <a href="vid&misc.html">Video & Misc</a> | 
+            <a href="about.html">About Me</a> |
+            <a href="contact.html">Contact</a> | 
+            </nav>
+        </div>
+   
+
+<!-- Copyright Footer Section -->
+<footer style="text-align: center; padding: 20px; margin-top: 50px;">
+    <p style="font-weight: bold; margin: 0; text-transform: uppercase;">
+        <i class="fa-regular fa-copyright"></i>© Nur Fiqriah 2026 | All works used belongs to the rightful owners. |
+             Made with the intention of completing IML470 assignment.<i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+    </p>
+</footer>
+
+</body>
+</html>

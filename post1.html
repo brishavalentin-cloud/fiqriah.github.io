@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Main Intrests!</title>
+    <style>
+        :root {
+            --bg-color: #4d6489;
+            --primary: #c0c6de;
+            --secondary: #e9d6e5;
+            --dark: #1c3150;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 700px; margin: 40px auto; }
+        .post-body {
+            background: white;
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            padding: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-weight: bold;
+            text-decoration: none;
+            background: var(--secondary);
+            padding: 5px 10px;
+            border: 2px solid var(--dark);
+        }
+        .interactive-box {
+            background: #de6363;
+            color: white;
+            padding: 15px;
+            border: 3px solid var(--dark);
+            margin-top: 30px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="post.html" class="back-link">← Back to Posts</a>
+        
+        <article class="post-body">
+            <h1>My Main Intrests!</h1>
+            <p><strong>Date:</strong> May 15, 2026 | <strong>Category:</strong> Life</p>
+            <hr style="border: 2px solid var(--dark)">
+            <p>I enjoy various types of entertainment, ranging from animations to books to movies and many more!</p>
+            <p>Currently, I am watching Diamond no Ace! It's my current hyperfixation.</p>
+            
+            <!-- Simple interactive dynamic button using Javascript inside the HTML -->
+            <div class="interactive-box" onclick="alert('Thank you for liking this post! You are awesome! (∩˃o˂∩)♡');">
+                 CLICK HERE TO LIKE THIS POST ♥
+            </div>
+        </article>
+    </div>
+
+<!-- Copyright Footer Section -->
+<footer style="text-align: center; padding: 20px; margin-top: 50px;">
+    <p style="font-weight: bold; margin: 0; text-transform: uppercase;">
+        <i class="fa-regular fa-copyright"></i>© Nur Fiqriah 2026 | All works used belongs to the rightful owners. |
+             Made with the intention of completing IML470 assignment.<i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+    </p>
+</footer>
+
+</body>
+</html>

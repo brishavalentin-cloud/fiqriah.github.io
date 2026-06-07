@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <style>
+        :root {
+            --bg-color: #4d6489;
+            --primary: #c0c6de;
+            --secondary: #e9d6e5;
+            --dark: #1c3150;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #ffffff;
+            padding: 10px;
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; }
+        nav { margin-top: 15px; }
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+        }
+        nav a:hover {
+            background: var(--secondary);
+            border: 2px solid var(--dark);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+        .blog-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--dark);
+        }
+        .blog-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+            margin-top: 15px;
+        }
+        .tag {
+            background: var(--secondary);
+            padding: 5px 10px;
+            font-weight: bold;
+            border: 2px solid var(--dark);
+            display: inline-block;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 3px solid var(--dark);
+            box-shadow: 4px 4px 0px var(--dark);
+            margin-top: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--secondary);
+        }
+        .nav-link {
+            color: var(--dark);
+            font-weight: bold;
+            text-decoration: none;
+            background: var(--secondary);
+            padding: 5px 10px;
+            border: 2px solid var(--dark);
+            margin-bottom: 20px;
+        }
+
+/* CLEAN ALBUM LIST LAYOUT */
+        .album-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        .album-card {
+            background: white;
+            border: 4px solid var(--dark);
+            box-shadow: 6px 6px 0px var(--dark);
+            padding: 15px;
+            width: 280px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .album-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+        }
+        .album-title {
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="main.html" class="nav-link">← Back to Main Page</a>
+    <div class="container">
+        <header>
+        <p>Click any post to see its content!</p>
+        </header>
+    </div>
+
+    <div class="album-list">
+        <article class="album-card">
+            <h2>My Main Intrest!</h2>
+            <p><small>Published: May 15, 2026</small></p>
+            <!-- Added picture on the main page -->
+             <img class="main-page-image" src="images/post-album/daiya-no-ace.jpg" alt="Seidou Team Crew Illustration">
+            <p style="margin-top:10px;">My main intrest...</p>
+            <a href="post1.html" class="btn">Read to know more →</a>
+        </article>
+
+        <article class="album-card">
+            <h2>Books in Reading!</h2>
+            <p><small>Published: May 10, 2026</small></p>
+            <!-- Added picture on the main page -->
+            <img class="main-page-image" src="images/post-album/book1.jpg" alt="Book Recommendations">
+            <p style="margin-top:10px;">Books currently in reading...</p>
+            <a href="post2.html" class="btn">Read to know more →</a>
+        </article>
+    </div>
+
+<!-- Copyright Footer Section -->
+<footer style="text-align: center; padding: 20px; margin-top: 50px;">
+    <p style="font-weight: bold; margin: 0; text-transform: uppercase;">
+        <i class="fa-regular fa-copyright"></i>© Nur Fiqriah 2026 | All works used belongs to the rightful owners. |
+             Made with the intention of completing IML470 assignment.<i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+    </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums</title>
+    <style>
+        :root {
+            --bg-color: #4d6489;
+            --primary: #c0c6de;
+            --secondary: #e9d6e5;
+            --dark: #1c3150;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header {
+            background: #ffffff;
+            padding: 10px;
+            border: 4px solid var(--dark);
+            box-shadow: 6px 6px 0px var(--dark);
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+        .nav-link {
+            color: var(--dark);
+            font-weight: bold;
+            text-decoration: none;
+            background: var(--secondary);
+            padding: 5px 10px;
+            border: 2px solid var(--dark);
+        }
+        
+        /* CLEAN ALBUM LIST LAYOUT */
+        .album-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        .album-card {
+            background: white;
+            border: 4px solid var(--dark);
+            box-shadow: 6px 6px 0px var(--dark);
+            padding: 15px;
+            width: 280px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .album-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 0px var(--dark);
+            background: #e9d6e5;
+        }
+        .album-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+        }
+        .album-title {
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+       
+        /* --- SLIDESHOW POP-UP MODAL STYLING --- */
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 41, 59, 0.95);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background-color: var(--bg-color);
+            border: 6px solid var(--dark);
+            box-shadow: 12px 12px 0px var(--dark);
+            max-width: 700px;
+            width: 100%;
+            padding: 30px;
+            position: relative;
+            text-align: center;
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f43f5e;
+            color: white;
+            border: 3px solid var(--dark);
+            font-weight: bold;
+            padding: 5px 12px;
+            cursor: pointer;
+            box-shadow: 3px 3px 0px var(--dark);
+            z-index: 110;
+        }
+        
+        /* Slide Container Setup */
+        .slideshow-container {
+            position: relative;
+            margin-top: 20px;
+            background: #ffffff;
+            border: 4px solid var(--dark);
+            padding: 15px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide-img {
+            max-width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+            border: 2px solid var(--dark);
+            /* Smooth fade transition effect */
+            animation: fadeEffect 0.4s ease-in-out;
+        }
+        @keyframes fadeEffect {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+        .slide-caption {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            background: var(--secondary);
+            padding: 8px 15px;
+            border: 2px solid var(--dark);
+            display: inline-block;
+        }
+
+        /* NAVIGATION ARROWS */
+        .prev-arrow, .next-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: var(--dark);
+            border: 3px solid var(--dark);
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px 15px;
+            cursor: pointer;
+            box-shadow: 3px 3px 0px var(--dark);
+            user-select: none;
+            transition: background 0.1s;
+        }
+        .prev-arrow:hover, .next-arrow:hover { background: #ffffff; }
+        .prev-arrow { left: -25px; }
+        .next-arrow { right: -25px; }
+    </style>
+</head>
+<body>
+    <a href="main.html" class="nav-link">← Back to Main Page</a>
+
+        <header>
+            <h1>MY AlBUMS [¯◉°]</h1>
+            <p>Click any album to see its content!</p>
+        </header>
+
+        <!-- Dynamic Rows of Album Choices -->
+        <div class="album-list">
+            <!-- Card 1 -->
+            <div class="album-card" onclick="openSlideshow(0)">
+                <img src="friend-album/compile1.jpg" alt="FRIEND GROUP ALBUM">
+                <div class="album-title">FRIEND GROUP ALBUM </div>
+                </div>
+
+            <!-- Card 2 -->
+            <div class="album-card" onclick="openSlideshow(1)">
+                <img src="images/photography-album/morning1.jpg" alt="PHOTOGRAPHY ALBUM">
+                <div class="album-title">PHOTOGRAPHY ALBUM </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="album-card" onclick="openSlideshow(2)">
+                <img src="friend-album/friend-pic4.jpg" alt="Second Half">
+                <div class="album-title">HOLDERS' ALBUM </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- ---POP-UP ALBUM--- -->
+    <div id="slideshow-modal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeSlideshow()">X</button>
+            <h2 id="modal-album-heading" style="margin-top:0; text-transform:uppercase;">Album View</h2>
+            
+            <div class="slideshow-container">
+                <!-- Action Arrows -->
+                <span class="prev-arrow" onclick="changeSlide(-1)">&#10094; Prev</span>
+                <span class="next-arrow" onclick="changeSlide(1)">Next &#10095;</span>
+                
+                <!-- Target Display Windows -->
+                <img id="display-img" class="slide-img" src="" alt="Active Slide View">
+                <div id="display-caption" class="slide-caption">Loading description...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- SLIDESHOW DATABASE & LOGIC CONTROLLER --- -->
+    <script>
+        // Album Database holding your Image Sources and Custom Text Captions
+        const albumsData = [
+            {
+                name: "FRIEND GROUP ALBUM",
+                slides: [
+                    { src: "friend-album/group-pic9.jpg", caption: "The squad gathered together on the field layout!" },
+                    { src: "friend-album/group-pic4.jpg", caption: "The squad after a Neon Night!" },
+                    { src: "friend-album/group-pic8.jpg", caption: "The squad in-between classes." }
+                ]
+            },
+            {
+                name: "PHOTOGRAPHY ALBUM",
+                slides: [
+                    { src: "images/photography-album/night1.jpg", caption: "A lone night with only the moon as company." },
+                    { src: "images/photography-album/morning2.jpg", caption: "A good morning." },
+                    { src: "images/photography-album/night3.jpg", caption: "A tiring evening." }
+                ]
+            },
+            {
+                name: "HOLDERS' ALBUM",
+                slides: [
+                    { src: "friend-album/friend-pic3.jpg", caption: "Holder of Longing." },
+                    { src: "friend-album/friend-pic5.jpg", caption: "Holder of Joy." },
+                    { src: "friend-album/friend-pic2.jpg", caption: "Holder of Content." }
+                ]
+            }
+        ];
+
+        let currentAlbumIndex = 0;
+        let currentSlideIndex = 0;
+
+        // Open layout modal box
+        function openSlideshow(albumIdx) {
+            currentAlbumIndex = albumIdx;
+            currentSlideIndex = 0;
+            
+            document.getElementById("modal-album-heading").innerText = albumsData[currentAlbumIndex].name;
+            updateSlideView();
+            document.getElementById("slideshow-modal").style.display = "flex";
+        }
+
+        // Close display window
+        function closeSlideshow() {
+            document.getElementById("slideshow-modal").style.display = "none";
+        }
+
+        // Outside wrapper closing shortcut helper
+        function closeModalOutside(event) {
+            if (event.target === document.getElementById("slideshow-modal")) {
+                closeSlideshow();
+            }
+        }
+
+        // Move step forward or backward
+        function changeSlide(direction) {
+            let totalSlides = albumsData[currentAlbumIndex].slides.length;
+            currentSlideIndex += direction;
+            
+            // Loop controls around limits
+            if (currentSlideIndex >= totalSlides) { currentSlideIndex = 0; }
+            if (currentSlideIndex < 0) { currentSlideIndex = totalSlides - 1; }
+            
+            updateSlideView();
+        }
+
+        // Render chosen media values to display tags
+        function updateSlideView() {
+            const imgElement = document.getElementById("display-img");
+            const captionElement = document.getElementById("display-caption");
+            const activeSlide = albumsData[currentAlbumIndex].slides[currentSlideIndex];
+            
+            // Reset image source to force the fade animation trigger smoothly
+            imgElement.style.animation = 'none';
+            imgElement.offsetHeight; /* Trigger reflow to restart animation */
+            imgElement.style.animation = null;
+
+            imgElement.src = activeSlide.src;
+            captionElement.innerText = activeSlide.caption;
+        }
+    </script>
+
+<!-- Copyright Footer Section -->
+<footer style="text-align: center; padding: 20px; margin-top: 50px;">
+    <p style="font-weight: bold; margin: 0; text-transform: uppercase;">
+        <i class="fa-regular fa-copyright"></i>© Nur Fiqriah 2026 | All works used belongs to the rightful owners. |
+             Made with the intention of completing IML470 assignment.<i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+    </p>
+</footer>
+
+    
+</body>
+</html>

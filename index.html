@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        :root {
+            --bg-color: #4d6489;
+            --primary: #c0c6de;
+            --secondary: #e9d6e5;
+            --dark: #1c3150;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: var(--card-bg);
+            padding: 30px;
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; }
+        nav { margin-top: 15px; }
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+        }
+        nav a:hover {
+            background: var(--secondary);
+            border: 2px solid var(--dark);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            border: 4px solid var(--dark);
+            box-shadow: 8px 8px 0px var(--dark);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+            align-items: center;
+        }
+        .blog-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--dark);
+            align-items: center;
+        }
+        .blog-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+            margin-top: 15px;
+        }
+        .tag {
+            background: var(--secondary);
+            padding: 5px 10px;
+            font-weight: bold;
+            border: 2px solid var(--dark);
+            display: inline-block;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 3px solid var(--dark);
+            box-shadow: 4px 4px 0px var(--dark);
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--secondary);
+        }
+        .album-card {
+            background: white;
+            border: 4px solid var(--dark);
+            box-shadow: 6px 6px 0px var(--dark);
+            padding: 15px;
+            width: 280px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            align-items: center;
+            display: inline-block;
+        }
+         .album-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+            align-items: center;
+        }
+        .section__home {
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            align-items: center;
+        }
+        .button__enter {
+            background: var(--primary);
+            border: none;
+            border-radius: 12px;
+            padding: 16px 32px;
+            text-align: center;
+            display: inline-block;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 16px;
+            color: var(--dark);
+            margin: 10px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .button__enter:hover {
+           background: var(--secondary);
+        }
+    </style> 
+</head>
+<body>
+    <header>
+        <h1>The Chaos Chronicles (ﾉ>w<)ﾉ :｡･:*:･ﾟ’★</h1>
+        <p>Welcome to my personal website! Here, you will find informations related to me, Fiqriah.</p>
+
+    </header>
+
+        <section class="section__home">
+            <div class="album-card">
+                <img src="images/post-album/personal1.jpg" alt="Fiqriah">
+            </div>
+    
+            <div>
+                <a href="main.html">
+                    <button class="button__enter">ENTER!</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Copyright Footer Section -->
+<footer style="text-align: center; padding: 20px; margin-top: 50px;">
+    <p style="font-weight: bold; margin: 0; text-transform: uppercase;">
+        <i class="fa-regular fa-copyright"></i>© Nur Fiqriah 2026 | All works used belongs to the rightful owners. |
+             Made with the intention of completing IML470 assignment.<i class="fa-solid fa-heart" style="color: #f43f5e;"></i>
+    </p>
+</footer>
+
+</body>
+</html>
